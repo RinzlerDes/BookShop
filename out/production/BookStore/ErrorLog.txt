@@ -1,0 +1,19 @@
+[2/22/24, 6:43 PM]|JDBCBroker|JDBCBroker|Error|NOTAG|null<Could not load driver class[com.mysql.jdbc.Driver]>
+[2/22/24, 6:45 PM]|JDBCBroker|JDBCBroker|Error|NOTAG|null<Could not load driver class[com.mysql.jdbc.Driver]>
+[2/22/24, 6:52 PM]|JDBCBroker|JDBCBroker|Error|NOTAG|null<Could not load driver class[org.mariadb.jdbc.Driver]>
+[2/22/24, 6:58 PM]|JDBCBroker|JDBCBroker|Error|NOTAG|null<Could not load driver class[org.mariadb.jdbc.Driver]>
+[2/22/24, 7:16 PM]|Patron|getSelectQueryResult|Error|NOTAG|null<SQL Exception: 1146: (conn=94) Table 'BookStore.patron' doesn't exist>
+[2/22/24, 7:20 PM]|BookCollection|getSelectQueryResult|Error|NOTAG|null<SQL Exception: 1146: (conn=99) Table 'BookStore.book' doesn't exist>
+[2/22/24, 7:20 PM]|BookCollection|getSelectQueryResult|Error|NOTAG|null<SQL Exception: 1146: (conn=99) Table 'BookStore.book' doesn't exist>
+[2/22/24, 7:20 PM]|BookCollection|getSelectQueryResult|Error|NOTAG|null<SQL Exception: 1146: (conn=99) Table 'BookStore.book' doesn't exist>
+[2/22/24, 7:20 PM]|PatronCollection|getSelectQueryResult|Error|NOTAG|null<SQL Exception: 1146: (conn=99) Table 'BookStore.patron' doesn't exist>
+[2/22/24, 7:20 PM]|PatronCollection|getSelectQueryResult|Error|NOTAG|null<SQL Exception: 1146: (conn=99) Table 'BookStore.patron' doesn't exist>
+[2/22/24, 7:20 PM]|PatronCollection|getSelectQueryResult|Error|NOTAG|null<SQL Exception: 1146: (conn=99) Table 'BookStore.patron' doesn't exist>
+[2/22/24, 7:20 PM]|PatronCollection|getSelectQueryResult|Error|NOTAG|null<SQL Exception: 1146: (conn=99) Table 'BookStore.patron' doesn't exist>
+[2/28/24, 8:56 PM]|BookShop|ATM.<init>|Error|NOTAG|null<Unable to create Teller object>
+[2/28/24, 9:01 PM]|BookShop|ATM.<init>|Error|NOTAG|null<Unable to create Teller object>
+[2/28/24, 9:21 PM]|BookShop|ATM.<init>|Error|NOTAG|null<Unable to create Teller object>
+[3/5/24, 10:45 AM]|JDBCBroker|JDBCBroker|Error|NOTAG|null<Could not load driver class[org.mariadb.jdbc.Driver]>
+[3/5/24, 10:45 AM]|JDBCBroker|JDBCBroker|Error|NOTAG|null<Could not load driver class[org.mariadb.jdbc.Driver]>
+[3/5/24, 10:47 AM]|JDBCBroker|JDBCBroker|Error|NOTAG|null<Could not load driver class[org.mariadb.jdbc.Driver]>
+[3/5/24, 1:02 PM]|Book|insertAutoIncrementalPersistentState|Error|NOTAG|null<SQL Exception: 1406: (conn=165) Data too long for column 'pubYear' at row 1>
