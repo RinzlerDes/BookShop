@@ -1,3 +1,4 @@
+For linux
 To compile:
 javac --module-path $PATH_TO_FX --add-modules javafx.controls -d classes  BookShop.java
 
