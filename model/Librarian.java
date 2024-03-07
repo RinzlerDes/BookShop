@@ -131,6 +131,10 @@ public class Librarian implements IView, IModel
             createAndShowLibrarianView();
         }
 
+        else if(key.equals("SearchBooks") == true) {
+            createAndShowBookCollectionView();
+        }
+
         //if (key.equals("Login") == true)
         //{
         //    if (value != null)
@@ -287,10 +291,24 @@ public class Librarian implements IView, IModel
             currentScene = new Scene(newView);
             myViews.put("BookView", currentScene);
         }
-
         swapToView(currentScene);
-
     }
+
+
+    private void createAndShowBookCollectionView()
+    {
+        Scene currentScene = (Scene)myViews.get("BookCollectionView");
+
+        if (currentScene == null)
+        {
+            // create our initial view
+            View newView = ViewFactory.createView("BookCollectionView", this); // USE VIEW FACTORY
+            currentScene = new Scene(newView);
+            myViews.put("BookCollectionView", currentScene);
+        }
+        swapToView(currentScene);
+    }
+
 
     ///** Register objects to receive state updates. */
     ////----------------------------------------------------------

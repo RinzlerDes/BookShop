@@ -14,10 +14,10 @@ public class ViewFactory {
         else if(viewName.equals("BookView") == true) {
             return new BookView(model);
         }
-		//else if(viewName.equals("TransactionChoiceView") == true)
-		//{
-		//	return new TransactionChoiceView(model);
-		//}
+		else if(viewName.equals("BookCollectionView") == true)
+		{
+			return new BookCollectionView(model);
+		}
 		//else if(viewName.equals("AccountCollectionView") == true)
 		//{
 		//	return new AccountCollectionView(model);

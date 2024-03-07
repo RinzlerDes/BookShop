@@ -119,11 +119,16 @@ public class LibrarianView extends View
 
      	grid.add(insertBook, 0, 0);
 
-
 		Button insertPatron = new Button("Insert Patron");
     	grid.add(insertPatron, 0, 1);
 
         Button searchBooks = new Button("Search Books");
+		searchBooks.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent e) {
+				myModel.stateChangeRequest("SearchBooks", null);
+			}
+		});
         grid.add(searchBooks, 0, 2);
 
         Button searchPatrons = new Button("Search Patrons");
