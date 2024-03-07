@@ -207,6 +207,7 @@ public class BookView extends View
 
 	// Process user input
 	public void processAction(Event event) {
+
 		if(bookTitle.getText() == null || bookTitle.getText().length() == 0) {
 			displayErrorMessage("Please enter a book title.");
 			bookTitle.requestFocus();
@@ -215,8 +216,16 @@ public class BookView extends View
 			displayErrorMessage("Please enter an author.");
 			author.requestFocus();
 		}
+		else if(pubYear.getText().isEmpty()) {
+			displayErrorMessage("Please enter a year between 1800 and 2024");
+			pubYear.requestFocus();
+		}
+		else if(pubYearHasLetter(pubYear.getText())) {
+			displayErrorMessage("Please enter only numbers.");
+			pubYear.requestFocus();
+		}
 		// needs fixing ---------------------------------------------------------------------------------------------
-		else if(Integer.parseInt(pubYear.getText()) < 1800 || Integer.parseInt(pubYear.getText()) > 2024 || Integer.parseInt(pubYear.getText()) == 0) {
+		else if(Integer.parseInt(pubYear.getText()) < 1800 || Integer.parseInt(pubYear.getText()) > 2024) {
 			displayErrorMessage("Please enter a year between 1800 and 2024");
 			pubYear.requestFocus();
 		}
@@ -226,8 +235,17 @@ public class BookView extends View
 		}
 		else {
 			insertBook();
-			myModel.stateChangeRequest("LibraryOptions", null);
+			//myModel.stateChangeRequest("LibraryOptions", null);
 		}
+	}
+
+	private boolean pubYearHasLetter(String str) {
+		for(int i = 0; i < str.length(); i++) {
+			if(Character.isLetter(str.charAt(i))) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	// Call the insert book method
@@ -236,9 +254,17 @@ public class BookView extends View
 		newBook.setProperty("bookTitle", bookTitle.getText());
 		newBook.setProperty("author", author.getText());
 		newBook.setProperty("pubYear", pubYear.getText());
+		newBook.setProperty("status", (String) status.getValue());
 
 		Book book= new Book(newBook);
-		book.update();
+		try {
+			book.update();
+			displayMessage("Book Successfully Entered.");
+		}
+		catch (Exception e) {
+			System.err.println("Error occurred during book update:");
+			e.printStackTrace();
+		}
 	}
 
 

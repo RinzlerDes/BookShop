@@ -102,7 +102,7 @@ public class Book extends EntityBase
             }
         }
         // Set book to active automatically
-        persistentState.setProperty("status", "active");
+        //persistentState.setProperty("status", "active");
     }
 
 
@@ -232,5 +232,16 @@ public class Book extends EntityBase
             mySchema = getSchemaInfo(tableName);
         }
     }
+
+//    public void processBookView() {
+//        Properties newBook = new Properties();
+//        newBook.setProperty("bookTitle", bookTitle.getText());
+//        newBook.setProperty("author", author.getText());
+//        newBook.setProperty("pubYear", pubYear.getText());
+//        newBook.setProperty("status", (String) status.getValue());
+//
+//        Book book= new Book(newBook);
+//        book.update();
+//    }
 }
 
