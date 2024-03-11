@@ -6,7 +6,7 @@ import model.BookCollection;
 //==============================================================================
 public class ViewFactory {
 
-	public static View createView(String viewName, IModel model, BookCollection obj)
+	public static View createView(String viewName, IModel model)
 	{
 		if(viewName.equals("LibrarianView") == true)
 		{
@@ -17,7 +17,7 @@ public class ViewFactory {
         }
 		else if(viewName.equals("BookCollectionView") == true)
 		{
-			return new BookCollectionView(model, obj);
+			return new BookCollectionView(model);
 		}
 		else if (viewName.equals("SearchTitle")) {
 			return new SearchTitleView(model);

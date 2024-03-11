@@ -45,18 +45,15 @@ public class BookCollectionView extends View
 {
     protected TableView<BookTableModel> tableOfBooks;
     protected Button cancelButton;
-    protected Button submitButton;
-
     protected MessageView statusLog;
     private BookCollection bc;
 
 
 
     //--------------------------------------------------------------------------
-    public BookCollectionView(IModel wsc, BookCollection bc)
+    public BookCollectionView(IModel wsc)
     {
         super(wsc, "BookCollectionView");
-        this.bc = bc;
 
         // create a container for showing the contents
         VBox container = new VBox(10);
@@ -86,12 +83,11 @@ public class BookCollectionView extends View
         ObservableList<BookTableModel> tableData = FXCollections.observableArrayList();
         try
         {
-            //BookCollection bookCollection = (BookCollection)myModel.getState("BookList");
+            BookCollection bc = (BookCollection)myModel.getState("BookList");
 //            BookCollection bookCollection = new BookCollection();
 //            bookCollection.findBooksWithTitleLike("th");
 //            bookCollection.display();
 
-            bc.getState("BookList");
 
             Vector entryList = (Vector)bc.getState("Books");
             Enumeration entries = entryList.elements();
@@ -128,7 +124,7 @@ public class BookCollectionView extends View
         HBox container = new HBox();
         container.setAlignment(Pos.CENTER);
 
-        Text titleText = new Text(" Brockport Bank ATM ");
+        Text titleText = new Text(" Library ");
         titleText.setFont(Font.font("Arial", FontWeight.BOLD, 20));
         titleText.setWrappingWidth(300);
         titleText.setTextAlignment(TextAlignment.CENTER);
@@ -200,18 +196,6 @@ public class BookCollectionView extends View
         scrollPane.setPrefSize(115, 150);
         scrollPane.setContent(tableOfBooks);
 
-        submitButton = new Button("Submit");
-        submitButton.setOnAction(new EventHandler<ActionEvent>() {
-
-            @Override
-            public void handle(ActionEvent e) {
-                clearErrorMessage();
-                // do the inquiry
-                processBookSelected();
-
-            }
-        });
-
         cancelButton = new Button("Back");
         cancelButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -224,7 +208,6 @@ public class BookCollectionView extends View
         HBox btnContainer = new HBox(100);
         btnContainer.setAlignment(Pos.CENTER);
         btnContainer.getChildren().add(cancelButton);
-        btnContainer.getChildren().add(submitButton);
 
         vbox.getChildren().add(grid);
         vbox.getChildren().add(scrollPane);

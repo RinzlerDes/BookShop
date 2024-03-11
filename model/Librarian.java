@@ -42,6 +42,9 @@ public class Librarian implements IView, IModel
     private String loginErrorMessage = "";
     //private String transactionErrorMessage = "";
 
+    // State variables
+    private BookCollection bc;
+    private Book book;
     // constructor for this class
     //----------------------------------------------------------
     public Librarian()
@@ -99,6 +102,10 @@ public class Librarian implements IView, IModel
         if (key.equals("LoginError") == true)
         {
             return loginErrorMessage;
+        }
+        else if (key.equals("BookList") == true)
+        {
+            return bc;
         }
         //else
         //if (key.equals("TransactionError") == true)
@@ -160,7 +167,7 @@ public class Librarian implements IView, IModel
         if (currentScene == null)
         {
             // create our initial view
-            View newView = ViewFactory.createView("LibrarianView", this, null); // USE VIEW FACTORY
+            View newView = ViewFactory.createView("LibrarianView", this); // USE VIEW FACTORY
             currentScene = new Scene(newView);
             myViews.put("LibrarianView", currentScene);
         }
@@ -178,7 +185,7 @@ public class Librarian implements IView, IModel
         if (currentScene == null)
         {
             // create our initial view
-            View newView = ViewFactory.createView("BookView", this, null); // USE VIEW FACTORY
+            View newView = ViewFactory.createView("BookView", this); // USE VIEW FACTORY
             currentScene = new Scene(newView);
             myViews.put("BookView", currentScene);
         }
@@ -193,7 +200,7 @@ public class Librarian implements IView, IModel
         if (currentScene == null)
         {
             // create our initial view
-            View newView = ViewFactory.createView("SearchTitle", this, null); // USE VIEW FACTORY
+            View newView = ViewFactory.createView("SearchTitle", this); // USE VIEW FACTORY
             currentScene = new Scene(newView);
             myViews.put("SearchTitle", currentScene);
         }
@@ -203,26 +210,22 @@ public class Librarian implements IView, IModel
 
     private void createAndShowSearchBooksCollectionView(BookCollection bc)
     {
-        Scene currentScene = (Scene)myViews.get("BookCollectionView");
 
-        if (currentScene == null)
-        {
             // create our initial view
-            View newView = ViewFactory.createView("BookCollectionView", this, bc); // USE VIEW FACTORY
-            currentScene = new Scene(newView);
-            myViews.put("BookCollectionView", currentScene);
-        }
+        View newView = ViewFactory.createView("BookCollectionView", this); // USE VIEW FACTORY
+        Scene currentScene = new Scene(newView);
+
+
         swapToView(currentScene);
     }
 
 
     private void searchBooks(String str) {
-        BookCollection bc = new BookCollection();
+        bc = new BookCollection();
         try {
             //System.out.println("str" + str);
             bc.findBooksWithTitleLike(str);
             bc.display();
-            myRegistry.updateSubscribers("BookList", bc);
             createAndShowSearchBooksCollectionView(bc);
         } catch (InvalidPrimaryKeyException e) {
             e.printStackTrace();

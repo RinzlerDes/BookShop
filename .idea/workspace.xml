@@ -5,18 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4571bdbf-ddf8-48ec-95f5-cf99e84de491" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/BookShop.java" beforeDir="false" afterPath="$PROJECT_DIR$/BookShop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookShopTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/BookShopTester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ErrorLog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ErrorLog.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/BookCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/BookCollection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbConfig.ini" beforeDir="false" afterPath="$PROJECT_DIR$/dbConfig.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/Librarian.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/Librarian.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BookStore/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BookStore/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BookStore/dbConfig.ini" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BookStore/dbConfig.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BookStore/model/Librarian.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BookStore/model/Librarian.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/BookStore/userinterface/BookCollectionView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BookStore/userinterface/BookCollectionView$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/BookStore/userinterface/BookCollectionView$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BookStore/userinterface/BookCollectionView$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/BookStore/userinterface/BookCollectionView$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BookStore/userinterface/BookCollectionView$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/BookStore/userinterface/BookCollectionView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BookStore/userinterface/BookCollectionView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/userinterface/BookCollectionView.java" beforeDir="false" afterPath="$PROJECT_DIR$/userinterface/BookCollectionView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userinterface/BookTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/userinterface/BookTableModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userinterface/ViewFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/userinterface/ViewFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,27 +44,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.BookShop.executor": "Run",
-    "Application.BookShopTester.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/rinzler/software_dev/BookShop",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.BookShop.executor&quot;: &quot;Run&quot;,
+    &quot;Application.BookShopTester.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/rinzler/software_dev/BookShop&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.BookShop">
     <configuration name="BookShop" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="BookShop" />
@@ -91,7 +90,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-17.0.9-corretto-17.0.9-4caba194b151-3c5dfc45" />
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-25a4bffe" />
       </set>
     </attachedChunks>
   </component>
@@ -107,6 +106,8 @@
       <workItem from="1710106596952" duration="768000" />
       <workItem from="1710107380577" duration="2376000" />
       <workItem from="1710110123030" duration="13437000" />
+      <workItem from="1710175875249" duration="1235000" />
+      <workItem from="1710181442233" duration="565000" />
     </task>
     <servers />
   </component>
