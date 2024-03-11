@@ -17,3 +17,9 @@
 [3/5/24, 10:45 AM]|JDBCBroker|JDBCBroker|Error|NOTAG|null<Could not load driver class[org.mariadb.jdbc.Driver]>
 [3/5/24, 10:47 AM]|JDBCBroker|JDBCBroker|Error|NOTAG|null<Could not load driver class[org.mariadb.jdbc.Driver]>
 [3/5/24, 1:02 PM]|Book|insertAutoIncrementalPersistentState|Error|NOTAG|null<SQL Exception: 1406: (conn=165) Data too long for column 'pubYear' at row 1>
+[3/10/24, 7:20 PM]|BookCollection|getSelectQueryResult|Error|NOTAG|null<SQL Exception: 1146: (conn=82) Table 'BookStore.book' doesn't exist>
+[3/10/24, 7:20 PM]|BookShop|ATM.<init>|Error|NOTAG|null<Unable to create Teller object>
+[3/10/24, 7:20 PM]|BookCollection|getSelectQueryResult|Error|NOTAG|null<SQL Exception: 1146: (conn=83) Table 'BookStore.book' doesn't exist>
+[3/10/24, 7:20 PM]|BookShop|ATM.<init>|Error|NOTAG|null<Unable to create Teller object>
+[3/10/24, 7:21 PM]|BookCollection|getSelectQueryResult|Error|NOTAG|null<SQL Exception: 1146: (conn=84) Table 'BookStore.book' doesn't exist>
+[3/10/24, 7:22 PM]|BookCollection|getSelectQueryResult|Error|NOTAG|null<SQL Exception: 1146: (conn=85) Table 'BookStore.books' doesn't exist>

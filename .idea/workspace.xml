@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4571bdbf-ddf8-48ec-95f5-cf99e84de491" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/BookShop.java" beforeDir="false" afterPath="$PROJECT_DIR$/BookShop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookShopTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/BookShopTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ErrorLog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ErrorLog.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/BookCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/BookCollection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Librarian.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/Librarian.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BookStore/userinterface/BookCollectionView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BookStore/userinterface/BookCollectionView$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BookStore/userinterface/BookCollectionView$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BookStore/userinterface/BookCollectionView$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BookStore/userinterface/BookCollectionView$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BookStore/userinterface/BookCollectionView$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BookStore/userinterface/BookCollectionView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BookStore/userinterface/BookCollectionView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userinterface/BookCollectionView.java" beforeDir="false" afterPath="$PROJECT_DIR$/userinterface/BookCollectionView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userinterface/BookTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/userinterface/BookTableModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userinterface/ViewFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/userinterface/ViewFactory.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2dVvXVU7YihDUB76GEPk69WowEB" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.BookShop.executor": "Run",
+    "Application.BookShopTester.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/rinzler/software_dev/BookShop",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.BookShop">
+    <configuration name="BookShop" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="BookShop" />
+      <module name="BookStore" />
+      <option name="VM_PARAMETERS" value="--module-path ${PATH_TO_FX} --add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookShopTester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="BookShopTester" />
+      <module name="BookStore" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.BookShopTester" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.9-corretto-17.0.9-4caba194b151-3c5dfc45" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4571bdbf-ddf8-48ec-95f5-cf99e84de491" name="Changes" comment="" />
+      <created>1710106100103</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1710106100103</updated>
+      <workItem from="1710106101182" duration="482000" />
+      <workItem from="1710106596952" duration="768000" />
+      <workItem from="1710107380577" duration="2376000" />
+      <workItem from="1710110123030" duration="13437000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

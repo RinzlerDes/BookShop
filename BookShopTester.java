@@ -11,8 +11,12 @@ public class BookShopTester {
         try {
             // Test creating a book with existing ID
             Book book1 = new Book("1");
-            System.out.println("Book 1 details:");
+            System.out.print("Book 1 details:");
             System.out.println(book1);
+
+            BookCollection bc = new BookCollection();
+            bc.findBooksWithTitleLike("th");
+            bc.display();
 
 //
 //            Patron patron1 = new Patron("1");

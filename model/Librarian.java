@@ -80,6 +80,7 @@ public class Librarian implements IView, IModel
         dependencies.setProperty("InsertPatron", "InsertPatronError");
         dependencies.setProperty("SearchBook", "SearchBookError");
         dependencies.setProperty("SearchPatron", "SearchPatronError");
+        dependencies.setProperty("BookList", "BookListUpdated");
 
         myRegistry.setDependencies(dependencies);
     }
@@ -130,57 +131,16 @@ public class Librarian implements IView, IModel
         else if(key.equals("LibraryOptions") == true) {
             createAndShowLibrarianView();
         }
-
         else if(key.equals("SearchBooks") == true) {
-            createAndShowBookCollectionView();
+            createAndShowSearchTitleView();
         }
-
-        //if (key.equals("Login") == true)
-        //{
-        //    if (value != null)
-        //    {
-        //        loginErrorMessage = "";
-
-        //        boolean flag = loginAccountHolder((Properties)value);
-        //        if (flag == true)
-        //        {
-        //            createAndShowTransactionChoiceView();
-        //        }
-        //    }
-        //}
-        //else
-        //if (key.equals("CancelTransaction") == true)
-        //{
-        //    createAndShowTransactionChoiceView();
-        //}
-        //else
-        //if ((key.equals("Deposit") == true) || (key.equals("Withdraw") == true) ||
-        //(key.equals("Transfer") == true) || (key.equals("BalanceInquiry") == true) ||
-        //(key.equals("ImposeServiceCharge") == true))
-        //{
-        //    String transType = key;
-
-        //    if (myAccountHolder != null)
-        //    {
-        //        doTransaction(transType);
-        //    }
-        //    else
-        //    {
-        //        transactionErrorMessage = "Transaction impossible: Customer not identified";
-        //    }
-
-        //}
-        //else
-        //if (key.equals("Logout") == true)
-        //{
-        //    myAccountHolder = null;
-        //    myViews.remove("TransactionChoiceView");
-
-        //    createAndShowLibrarianView();
-        //}
+        else if(key.equals("SearchBooksCollection") == true) {
+            searchBooks((String)value);
+        }
 
         myRegistry.updateSubscribers(key, this);
     }
+
 
     ///** Called via the IView relationship */
     ////----------------------------------------------------------
@@ -191,75 +151,6 @@ public class Librarian implements IView, IModel
         stateChangeRequest(key, value);
     }
 
-    ///**
-    // * Login AccountHolder corresponding to user name and password.
-    //*/
-    ////----------------------------------------------------------
-    //public boolean loginAccountHolder(Properties props)
-    //{
-    //    try
-    //    {
-    //        myAccountHolder = new AccountHolder(props);
-    //        // DEBUG System.out.println("Account Holder: " + myAccountHolder.getState("Name") + " successfully logged in");
-    //        return true;
-    //    }
-    //catch (InvalidPrimaryKeyException ex)
-    //    {
-    //        loginErrorMessage = "ERROR: " + ex.getMessage();
-    //        return false;
-    //    }
-    //catch (PasswordMismatchException exec)
-    //    {
-
-    //        loginErrorMessage = "ERROR: " + exec.getMessage();
-    //        return false;
-    //    }
-    //}
-
-
-    ///**
-    // * Create a Transaction depending on the Transaction type (deposit,
-    // * withdraw, transfer, etc.). Use the AccountHolder holder data to do the
-    // * create.
-    //*/
-    ////----------------------------------------------------------
-    //public void doTransaction(String transactionType)
-    //{
-    //    try
-    //    {
-    //        Transaction trans = TransactionFactory.createTransaction(
-    //            transactionType, myAccountHolder);
-
-    //        trans.subscribe("CancelTransaction", this);
-    //        trans.stateChangeRequest("DoYourJob", "");
-    //    }
-    //catch (Exception ex)
-    //    {
-    //        transactionErrorMessage = "FATAL ERROR: TRANSACTION FAILURE: Unrecognized transaction!!";
-    //    new Event(Event.getLeafLevelClassName(this), "createTransaction",
-    //            "Transaction Creation Failure: Unrecognized transaction " + ex.toString(),
-    //        Event.ERROR);
-    //    }
-    //}
-
-    ////----------------------------------------------------------
-    //private void createAndShowTransactionChoiceView()
-    //{
-    //    Scene currentScene = (Scene)myViews.get("TransactionChoiceView");
-
-    //    if (currentScene == null)
-    //    {
-    //        // create our initial view
-    //        View newView = ViewFactory.createView("TransactionChoiceView", this); // USE VIEW FACTORY
-    //        currentScene = new Scene(newView);
-    //        myViews.put("TransactionChoiceView", currentScene);
-    //    }
-
-
-    //    // make the view visible by installing it into the frame
-    //    swapToView(currentScene);
-
-    //}
 
     ////------------------------------------------------------------
     private void createAndShowLibrarianView()
@@ -269,7 +160,7 @@ public class Librarian implements IView, IModel
         if (currentScene == null)
         {
             // create our initial view
-            View newView = ViewFactory.createView("LibrarianView", this); // USE VIEW FACTORY
+            View newView = ViewFactory.createView("LibrarianView", this, null); // USE VIEW FACTORY
             currentScene = new Scene(newView);
             myViews.put("LibrarianView", currentScene);
         }
@@ -279,7 +170,7 @@ public class Librarian implements IView, IModel
     }
 
 
-    //
+    ///
     private void createAndShowInsertBookView()
     {
         Scene currentScene = (Scene)myViews.get("BookView");
@@ -287,7 +178,7 @@ public class Librarian implements IView, IModel
         if (currentScene == null)
         {
             // create our initial view
-            View newView = ViewFactory.createView("BookView", this); // USE VIEW FACTORY
+            View newView = ViewFactory.createView("BookView", this, null); // USE VIEW FACTORY
             currentScene = new Scene(newView);
             myViews.put("BookView", currentScene);
         }
@@ -295,19 +186,50 @@ public class Librarian implements IView, IModel
     }
 
 
-    private void createAndShowBookCollectionView()
+    private void createAndShowSearchTitleView()
+    {
+        Scene currentScene = (Scene)myViews.get("SearchTitle");
+
+        if (currentScene == null)
+        {
+            // create our initial view
+            View newView = ViewFactory.createView("SearchTitle", this, null); // USE VIEW FACTORY
+            currentScene = new Scene(newView);
+            myViews.put("SearchTitle", currentScene);
+        }
+        swapToView(currentScene);
+    }
+
+
+    private void createAndShowSearchBooksCollectionView(BookCollection bc)
     {
         Scene currentScene = (Scene)myViews.get("BookCollectionView");
 
         if (currentScene == null)
         {
             // create our initial view
-            View newView = ViewFactory.createView("BookCollectionView", this); // USE VIEW FACTORY
+            View newView = ViewFactory.createView("BookCollectionView", this, bc); // USE VIEW FACTORY
             currentScene = new Scene(newView);
             myViews.put("BookCollectionView", currentScene);
         }
         swapToView(currentScene);
     }
+
+
+    private void searchBooks(String str) {
+        BookCollection bc = new BookCollection();
+        try {
+            //System.out.println("str" + str);
+            bc.findBooksWithTitleLike(str);
+            bc.display();
+            myRegistry.updateSubscribers("BookList", bc);
+            createAndShowSearchBooksCollectionView(bc);
+        } catch (InvalidPrimaryKeyException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+    }
+
 
 
     ///** Register objects to receive state updates. */

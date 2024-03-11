@@ -22,7 +22,7 @@ import impresario.IView;
 //==============================================================
 public class BookCollection extends EntityBase implements IView
 {
-    private static final String myTableName = "book";
+    private static final String myTableName = "Book";
     private Vector<Book> bookList;
 
     // GUI Components
@@ -202,6 +202,8 @@ public class BookCollection extends EntityBase implements IView
             mySchema = getSchemaInfo(tableName);
         }
     }
+
+
 }
 
 

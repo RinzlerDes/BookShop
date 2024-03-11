@@ -29,6 +29,7 @@ import event.Event;
 import event.EventLog;
 import common.PropertyFile;
 
+import model.BookCollection;
 import model.Librarian;
 import userinterface.MainStageContainer;
 import userinterface.WindowPosition;
@@ -67,7 +68,7 @@ public class BookShop extends Application
 
            try
 	   {
-		librarian = new Librarian();
+		   librarian = new Librarian();
 	   }
 	   catch(Exception exc)
 	   {

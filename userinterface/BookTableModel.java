@@ -24,7 +24,7 @@ public class BookTableModel
     }
 
     //----------------------------------------------------------------------------
-    public String getBookNumber() {
+    public String getBookId() {
         return bookId.get();
     }
 
@@ -34,12 +34,12 @@ public class BookTableModel
     }
 
     //----------------------------------------------------------------------------
-    public String getBookTtile() {
+    public String getBookTitle() {
         return bookTitle.get();
     }
 
     //----------------------------------------------------------------------------
-    public void setBookTtile(String aType) {
+    public void setBookTitle(String aType) {
         bookTitle.set(aType);
     }
 

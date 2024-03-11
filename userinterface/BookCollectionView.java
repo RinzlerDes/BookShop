@@ -48,12 +48,15 @@ public class BookCollectionView extends View
     protected Button submitButton;
 
     protected MessageView statusLog;
+    private BookCollection bc;
+
 
 
     //--------------------------------------------------------------------------
-    public BookCollectionView(IModel wsc)
+    public BookCollectionView(IModel wsc, BookCollection bc)
     {
         super(wsc, "BookCollectionView");
+        this.bc = bc;
 
         // create a container for showing the contents
         VBox container = new VBox(10);
@@ -80,29 +83,40 @@ public class BookCollectionView extends View
     //--------------------------------------------------------------------------
     protected void getEntryTableModelValues()
     {
-
         ObservableList<BookTableModel> tableData = FXCollections.observableArrayList();
         try
         {
-            BookCollection bookCollection= (BookCollection)myModel.getState("BookList");
+            //BookCollection bookCollection = (BookCollection)myModel.getState("BookList");
+//            BookCollection bookCollection = new BookCollection();
+//            bookCollection.findBooksWithTitleLike("th");
+//            bookCollection.display();
 
-            Vector entryList = (Vector)bookCollection.getState("Books");
+            bc.getState("BookList");
+
+            Vector entryList = (Vector)bc.getState("Books");
             Enumeration entries = entryList.elements();
 
             while (entries.hasMoreElements() == true)
             {
                 Book nextBook = (Book)entries.nextElement();
                 Vector<String> view = nextBook.getEntryListView();
+                System.out.println("---------");
+                for(String str : view) {
+                    System.out.println(str);
+                }
+                System.out.println("---------");
 
                 // add this list entry to the list
                 BookTableModel nextTableRowData = new BookTableModel(view);
                 tableData.add(nextTableRowData);
-
             }
 
             tableOfBooks.setItems(tableData);
+            System.out.println("ok getting books.");
         }
         catch (Exception e) {//SQLException e) {
+            System.err.println("Error getting books from db.");
+            e.printStackTrace();
             // Need to handle this exception
         }
     }
@@ -136,7 +150,7 @@ public class BookCollectionView extends View
         grid.setVgap(10);
         grid.setPadding(new Insets(25, 25, 25, 25));
 
-        Text prompt = new Text("LIST OF ACCOUNTS");
+        Text prompt = new Text("LIST OF BOOKS");
         prompt.setWrappingWidth(350);
         prompt.setTextAlignment(TextAlignment.CENTER);
         prompt.setFill(Color.BLACK);
@@ -148,25 +162,30 @@ public class BookCollectionView extends View
         TableColumn accountNumberColumn = new TableColumn("Book Number") ;
         accountNumberColumn.setMinWidth(100);
         accountNumberColumn.setCellValueFactory(
-                new PropertyValueFactory<BookTableModel, String>("accountNumber"));
+                new PropertyValueFactory<BookTableModel, String>("bookId"));
 
-        TableColumn accountTypeColumn = new TableColumn("Book Type") ;
+        TableColumn accountTypeColumn = new TableColumn("Book Title") ;
         accountTypeColumn.setMinWidth(100);
         accountTypeColumn.setCellValueFactory(
-                new PropertyValueFactory<BookTableModel, String>("accountType"));
+                new PropertyValueFactory<BookTableModel, String>("bookTitle"));
 
-        TableColumn balanceColumn = new TableColumn("Balance") ;
+        TableColumn balanceColumn = new TableColumn("Author") ;
         balanceColumn.setMinWidth(100);
         balanceColumn.setCellValueFactory(
-                new PropertyValueFactory<BookTableModel, String>("balance"));
+                new PropertyValueFactory<BookTableModel, String>("author"));
 
-        TableColumn serviceChargeColumn = new TableColumn("Service Charge") ;
+        TableColumn serviceChargeColumn = new TableColumn("Publication Year") ;
         serviceChargeColumn.setMinWidth(100);
         serviceChargeColumn.setCellValueFactory(
-                new PropertyValueFactory<BookTableModel, String>("serviceCharge"));
+                new PropertyValueFactory<BookTableModel, String>("pubYear"));
 
-        tableOfBooks.getColumns().addAll(accountNumberColumn,
-                accountTypeColumn, balanceColumn, serviceChargeColumn);
+        TableColumn statusColumn = new TableColumn("Status") ;
+        statusColumn.setMinWidth(100);
+        statusColumn.setCellValueFactory(
+                new PropertyValueFactory<BookTableModel, String>("status"));
+
+        tableOfBooks.getColumns().addAll(accountNumberColumn, accountTypeColumn,
+                balanceColumn, serviceChargeColumn, statusColumn);
 
         tableOfBooks.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
@@ -195,26 +214,17 @@ public class BookCollectionView extends View
 
         cancelButton = new Button("Back");
         cancelButton.setOnAction(new EventHandler<ActionEvent>() {
-
             @Override
             public void handle(ActionEvent e) {
-                /**
-                 * Process the Cancel button.
-                 * The ultimate result of this action is that the transaction will tell the teller to
-                 * to switch to the transaction choice view. BUT THAT IS NOT THIS VIEW'S CONCERN.
-                 * It simply tells its model (controller) that the transaction was canceled, and leaves it
-                 * to the model to decide to tell the teller to do the switch back.
-                 */
-                //----------------------------------------------------------
                 clearErrorMessage();
-                myModel.stateChangeRequest("CancelBookList", null);
+                myModel.stateChangeRequest("LibraryOptions", null);
             }
         });
 
         HBox btnContainer = new HBox(100);
         btnContainer.setAlignment(Pos.CENTER);
-        btnContainer.getChildren().add(submitButton);
         btnContainer.getChildren().add(cancelButton);
+        btnContainer.getChildren().add(submitButton);
 
         vbox.getChildren().add(grid);
         vbox.getChildren().add(scrollPane);
@@ -237,7 +247,7 @@ public class BookCollectionView extends View
 
         if(selectedItem != null)
         {
-            String selectedAcctNumber = selectedItem.getBookNumber();
+            String selectedAcctNumber = selectedItem.getBookId();
 
             myModel.stateChangeRequest("BookSelected", selectedAcctNumber);
         }
